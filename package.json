@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fantasyui-com/transfusion/issues"
   },
-  "homepage": "https://github.com/fantasyui-com/transfusion#readme"
+  "homepage": "https://github.com/fantasyui-com/transfusion#readme",
+  "dependencies": {
+    "retry": "^0.12.0"
+  }
 }
