@@ -186,4 +186,5 @@ wss.on('connection', function connection(socket) {
 
 })
 
+return transfusion;
 }

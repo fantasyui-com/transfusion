@@ -135,4 +135,5 @@ $(function() {
   transfusion.emit('dom.ready');
 });
 
+return transfusion;
 }
