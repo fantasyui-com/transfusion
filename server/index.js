@@ -1,10 +1,9 @@
-module.exports = function(options){
-
-// console.info(`[RE]STARTING: ${__filename}`)
-// require('fs').watch( __filename, () => process.exit(0) );
+console.info(`[RE]STARTING: ${__filename}`)
+require('fs').watch( __filename, () => process.exit(0) );
 
 const fs = require('fs');
 const path = require('path');
+
 const util = require('util');
 
 const chokidar = require('chokidar');
@@ -28,7 +27,7 @@ const WebSocketStates = {
 // TODO: Employ https://github.com/fantasyui-com/cuddlemuffin for data storage
 
 
-var watcher = chokidar.watch(path.resolve(options.cuddlemuffinData), {
+var watcher = chokidar.watch(path.resolve(path.join(__dirname, '..', 'cuddlemuffin-data')), {
   depth: 3,
   persistent: true
 });
@@ -40,6 +39,7 @@ watcher
 
   .on('add', path => log(`File ${path} has been added`))
   .on('change', path => log(`File ${path} has been changed`))
+
   .on('unlink', path => log(`File ${path} has been removed`))
   .on('addDir', path => log(`Directory ${path} has been added`))
   .on('unlinkDir', path => log(`Directory ${path} has been removed`))
@@ -49,7 +49,7 @@ watcher
     log('Raw event info:', event, path, details);
   });
 
-const wss = new WebSocket.Server({ port: options.port });
+const wss = new WebSocket.Server({ port: 8081 });
 
 const EventEmitter = require('events');
 class Transfusion extends EventEmitter {
@@ -185,5 +185,3 @@ wss.on('connection', function connection(socket) {
   // transfusion.emit('send', {name:'object', data: {uuid:'aag', version:1, tags:'todo,today,bork', text:"Buy Socks!"} });
 
 })
-
-}
