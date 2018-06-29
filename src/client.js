@@ -9,7 +9,7 @@ const fs = require('fs');
 const pookie = require('pookie')(options.vfs);
 const ensign = require('ensign')({});
 
-const bogo = require('bogo')({port:8081, debug:true});
+const bogo = require('bogo')({port:options.port, debug:true});
 const dataCommand = require('data-command')();
 
 const reconcilers = options.reconcilers;
