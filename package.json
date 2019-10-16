@@ -1,6 +1,6 @@
 {
   "name": "transfusion",
-  "version": "1.26.0",
+  "version": "1.27.0",
   "description": "Minimalist framework for real-time data synchronization.",
   "main": "index.js",
   "scripts": {
