@@ -21,7 +21,7 @@
     "bogo": "^1.16.0",
     "brfs": "^2.0.2",
     "bufferutil": "^4.0.1",
-    "chokidar": "^3.2.2",
+    "chokidar": "^3.2.3",
     "cuddlemuffin": "^1.9.0",
     "data-command": "^1.4.0",
     "enbuffer": "^1.6.0",
